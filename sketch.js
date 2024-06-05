@@ -1,17 +1,27 @@
-var font;
-function preload(){
-font=loadFont("BlackOpsOne-Regular.ttf");
-}
-function setup(){
-createCanvas(400,400);
-background(  186, 184, 108);
-fill(255,35,48);//text color min 0 max 100
-noStroke();
-points=font.textToPoints("BSU",100,100,100,{sampleFactor:0.15});
-//determines how many points generated 
-for(var i=0;i<points.length;i++){// starts 0,then if i is less than length of the given points,i increased by 1
-var p=points[i];
-ellipse(p.x,p.y,random(2,15),random(2,15));
+var count = 1; 
+var c; 
+function setup() { 
+c = createCanvas(600, 400); 
+background(255); 
+noStroke(); 
+} 
+function draw() { 
+if (mouseIsPressed) { 
+  fill(224,109,6); 
+  rect(mouseX, mouseY, 30, 30); 
+  fill(255,197,58);
+  rect(mouseX,mouseY,20,20);
+   fill(240,153,32);
+  ellipse(mouseX,mouseY,10,10)
+} 
+} 
+function keyPressed() { 
+if (keyCode == 65) { 
+  saveCanvas(c, 'canvasName' + count, 'jpg'); 
+  count++; 
+} 
 }
 
-}
+
+
+
