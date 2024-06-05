@@ -1,26 +1,19 @@
-var maxCol=5;
-var maxRow=4;
-var circleD=60;
+function setup() { 
+createCanvas(600, 400);
+background(255); 
+stroke(0,0,255); 
+noFill(); 
+strokeWeight(3); 
+translate(0, height/2); 
+beginShape(); 
+var noiseCount= 0;//starts with 0 
+//start from 0,it will loop depending on the given width,
+//then i is increased by 1
+for(var i= 0; i< width; i+= 1) { 
+var ranY= noise(noiseCount); //position for y
+vertex(i, ranY* 100);//point
+noiseCount+= 0.02; 
+} 
+endShape();
 
-function setup() {
-  createCanvas(400, 400);
-  noStroke();
-  //colorMode(HSB,360,100,100);
-  background(0);
-  ellipseMode(CORNER);
-  var xSpacing=(width/maxCol);
-  var ySpacing=(height/maxRow);
-  translate(30,20);
-  for(var x=0;x<maxCol;x++){
-  for(var y=0;y<maxRow;y++){
-    if(x==1){
-    fill(255,0,171);
-      }else{
-        fill(141,16,195);
-      }
-  
-    ellipse(x*xSpacing,y*ySpacing,circleD,circleD)
-  
-  }
-}
 }
