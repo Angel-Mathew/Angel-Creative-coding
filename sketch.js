@@ -1,33 +1,14 @@
-var img, x, y;
+var img;
 function preload() {
-img = loadImage("road.jpg");
+img = loadImage("sea.jpg");
 }
-function setup() {
-createCanvas (500, 500);
+function setup () {
+createCanvas (170,305);
 background(0);
-noStroke();
 }
 function draw() {
-x = random(width);
-y = random(height);
-var c = img.get(x, y);
-fill(c[0], c[1], c[2], 25);
-rect (x, y, 19,19);
+background(0);
+image(img, 0, 0);
+filter(INVERT);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
