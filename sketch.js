@@ -1,27 +1,24 @@
-var count = 1; 
-var c; 
-function setup() { 
-c = createCanvas(600, 400); 
-background(255); 
-noStroke(); 
-} 
-function draw() { 
-if (mouseIsPressed) { 
-  fill(224,109,6); 
-  rect(mouseX, mouseY, 30, 30); 
-  fill(255,197,58);
-  rect(mouseX,mouseY,20,20);
-   fill(240,153,32);
-  ellipse(mouseX,mouseY,10,10)
-} 
-} 
-function keyPressed() { 
-if (keyCode == 65) { 
-  saveCanvas(c, 'canvasName' + count, 'jpg'); 
-  count++; 
-} 
+let mic; 
+let colours = [ // array of colors 
+  "#FF4365",
+  "#812333",
+  "#030301",
+  "#42131A",
+  "#C0334C"
+]
+
+function setup() {
+	createCanvas(windowWidth, windowHeight);
+	background(100);
+	mic = new p5.AudioIn(); // code to let the get the audio from the mic 
+	mic.start();
 }
 
-
-
-
+function draw() {
+	
+	let micLevel = mic.getLevel() * height * 3; // when there is an audio, it increases 
+	fill(random(colours));
+    rect(mouseX,mouseY,micLevel);
+    //triangle(mouseX,mouseY,20,25,30,35);
+	circle(mouseX,mouseY,20);//  positions based from mouse interaction
+}
