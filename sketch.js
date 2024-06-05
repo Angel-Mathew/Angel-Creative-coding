@@ -1,19 +1,19 @@
-var circleSize=80;
-function setup() {
-  createCanvas(400, 400);
-  background(255);
-  translate(circleSize/2,circleSize/2);
-//for loop is considering the width and height of the canvas
-for(var x=0;x<width;x+=circleSize){
-  for(var y=0;y<height;y+=circleSize){
-    fill(1,1,1);
-    ellipse(x,y,circleSize*1.2,circleSize*1.2);
-    fill(255,0,0);
-    ellipse(x,y,circleSize*0.8,circleSize*0.8);
-    fill(253,8,131);
-    ellipse(x,y,circleSize*0.3,circleSize*0.3);  
-  }
-}
-}
+function setup() { 
+createCanvas(600, 400);
+background(255); 
+stroke(0,0,255); 
+noFill(); 
+strokeWeight(3); 
+translate(0, height/2); 
+beginShape(); 
+var noiseCount= 0;//starts with 0 
+//start from 0,it will loop depending on the given width,
+//then i is increased by 1
+for(var i= 0; i< width; i+= 1) { 
+var ranY= noise(noiseCount); //position for y
+vertex(i, ranY* 100);//point
+noiseCount+= 0.02; 
+} 
+endShape();
 
-
+}
