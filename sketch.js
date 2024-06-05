@@ -1,14 +1,34 @@
-var img;
+var img, x, y;
 function preload() {
-img = loadImage("sea.jpg");
+img = loadImage("heir.jpg");
 }
-function setup () {
-createCanvas (170,305);
+function setup() {
+createCanvas (400,400);
 background(0);
+noStroke();
+
 }
 function draw() {
 background(0);
-image(img, 0, 0);
-filter(INVERT);
+x = mouseX;
+y = mouseY;
+image( img, 0, 0);
+var A = get(x, y);
+fill(A);
+rect (x,y,90,90);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
