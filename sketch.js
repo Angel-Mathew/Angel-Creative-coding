@@ -1,20 +1,37 @@
 function setup() {
-createCanvas(400,400);  
+  createCanvas(500,500);
 }
-function draw(){
-  background(65,212,255);
-  fill(19,80,40)
-  //rect(x,y,width,height)
-  rect(200,150,150,50);
-  fill(150,80,0)
-  //ellipse(x,y,width,height)
-  ellipse(230,200,35,35);
-  ellipse(310,200,35,35);
-  //triangle(x1,y1,x2,y2,x3,y3)
-  triangle(100,100,200,200,100,200);  
-  stroke(0);
-  strokeWeight(3);
-  //line(x1,y1,x2,y2)
-  line(47,72,200,150);
-}
+
+  function draw() {
+  background(0,150,255);
+  //head
+  fill(144,238,144);
+  ellipse(176,100,110,160);
+  //right eye 
+  fill(0,0,0);
+  ellipse(150,50,20,20);
+  //left eye
+  fill(0,0,0);
+  ellipse(190,50,20,20);
+  //mouth
+  fill(255,255,255);
+  ellipse(176,109,90,40);
+  //body
+  fill(144,238,144);
+  ellipse(175,270,120,200);
+  //left anteena
+   ellipse(132,30,10,40);
+  //right anteena
+    ellipse(220,30,10,40);
+  //left hand
+    beginShape()
+    vertex(0,100)
+    bezierVertex(100,100,110,130,125,215)
+    endShape()
+  //Space vechile
+    fill(161,13,13)
+  rect(190,280,250,100);
+  rect(190,355,250,12);
+//space vechile's top 
+  triangle(280,180,180,280,380,280); 
 
